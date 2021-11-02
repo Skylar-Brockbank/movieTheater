@@ -14,7 +14,7 @@ $(document).ready(function(){
     $("#selectionForm").toggle();
     let transferValue = this.value;
     transferValue = transferValue.split(",");
-    transferValue[0] = (transferValue[0]===true);
+    transferValue[0] = (transferValue[0]==="true");
     transferValue[1] = parseInt(transferValue[1]);
     MyTicket.newRelease = transferValue[0];
     MyTicket.showTime = transferValue[1];
@@ -26,10 +26,11 @@ $(document).ready(function(){
     event.preventDefault();
     let ageSelection = $("input:radio[name=ageRange]:checked").val();
     MyTicket.ageRange = ageSelection;
-    $("#display-selected-movie").text("Your Ticket Costs $"+ MyTicket.getPrice());
+    $("#display-selected-movie").text("Your Ticket Costs is $"+ MyTicket.getPrice());
 
     $("#selectionForm").toggle();
     $("#display-selected-movie").toggle();
+    console.log(MyTicket);
   });
 
 });
@@ -92,7 +93,6 @@ function generateCards(Cat){
 }
 
 function timeButtons(movie){
-  console.log("movie from timebuttons: "+ movie);
   output = '';
   for(let m in movie.showTimes){
     let text = '';
@@ -104,7 +104,6 @@ function timeButtons(movie){
       text = "evening";
     }
     output = output + "<button class='timeButtons' id='button" + m + "' value='" + movie.newRelease + "," + movie.showTimes[m] + "'>" + text + "</button>";
-    // output = "<button> this is a test</button>";
   }
   return "<div class='buttonBox'>" + output + "</div>";
 }
@@ -116,16 +115,15 @@ function tButtons(val) {
 
 //misc testing stuff to be deleted later
 function setupStuff(){
-  let Movie1 = new Movie("Movie",false,[0,2]);
-  let Movie2 = new Movie("Movie 2 return of the movie",false,[1]);
-  let Movie3 = new Movie("Movie 3 Tokyo drift",true,[0,1,2]);
+  let Movie1 = new Movie("Movie", false, [0,2]);
+  let Movie2 = new Movie("Movie 2: movie Harder", false, [1]);
+  let Movie3 = new Movie("Movie 3: Tokyo drift", true, [0,1,2]);
+
   
   let Catalog1 = new Catalog();
   Catalog1.addMovie(Movie1);
-  console.log(Movie1.showTimes);
   Catalog1.addMovie(Movie2);
-  console.log(Movie2.showTimes);
   Catalog1.addMovie(Movie3);
-  console.log(Movie3.showTimes);
+  
   return Catalog1;
 }
