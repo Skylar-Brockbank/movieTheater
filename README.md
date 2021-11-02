@@ -57,6 +57,15 @@ Code: Ticket1 = new Ticket(true,1,0);
       Ticket1.getPrice();
 Expected Outcome: 9
 
+Description: tButtons()
+Test: It should return a button element
+Code: tButtons()
+Expected Outcome: "<button>test</button>"
+
+Test: It should return a button element with a value
+Code: tButtons(0))
+Expected Outcome: "<button value='0'>test</button>"
+
 <!-- Describe: Dog()
 Test: It should return an object with properties of name, age and color"
 Code: dog1 = new Dog('spot',3,"brown");
