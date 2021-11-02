@@ -67,14 +67,6 @@ Code: tButtons(0))
 Expected Outcome: "<button value='0'>test</button>"
 
 
-
-<!-- Describe: Dog()
-Test: It should return an object with properties of name, age and color"
-
-Code: dog1 = new Dog('spot',3,"brown");
-            dog1.name;
-Expected Output: “spot" -->
-
 ## Known Bugs
 
 * _No Known Bugs (bugs coming soon to a theater near you)_

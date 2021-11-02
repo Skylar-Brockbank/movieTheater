@@ -4,21 +4,36 @@
 
 //UI logic
 
+$(document).ready(function(){
+  let mainCatalog = setupStuff();
+  $("#display-movies").html(generateCards(mainCatalog));
+  let MyTicket = new Ticket();
+  
+  $(".timeButtons").click(function() {
+    $("#display-movies").toggle();
+    $("#selectionForm").toggle();
+    let transferValue = this.value;
+    transferValue = transferValue.split(",");
+    transferValue[0] = (transferValue[0]===true);
+    transferValue[1] = parseInt(transferValue[1]);
+    MyTicket.newRelease = transferValue[0];
+    MyTicket.showTime = transferValue[1];
+    console.log(MyTicket);
+    
+  }); 
 
+  $("form").submit(function(event){
+    event.preventDefault();
+    let ageSelection = $("input:radio[name=ageRange]:checked").val();
+    MyTicket.ageRange = ageSelection;
+    $("#display-selected-movie").text("Your Ticket Costs $"+ MyTicket.getPrice());
 
-//Objects
-  //Movie Catalog✔︎
+    $("#selectionForm").toggle();
+    $("#display-selected-movie").toggle();
+  });
 
-  //Movie Object✔︎
+});
 
-  //Ticket Object✔
-    //ageRange✔︎
-
-    //newRelease?✔︎
-
-    //timeOfDay✔︎
-
-      //function getPrice(this.age, this.new, this.tod)✔︎
 
 function Ticket(newRelease, showTime, ageRange) {
   this.newRelease = newRelease;
@@ -67,16 +82,8 @@ Catalog.prototype.addMovie = function (movie) {
   this.movies.push(movie);
 }
 
+//Utility Functions
 
-// function displayContactDetails(addressBookToDisplay) {
-//   let contactsList = $("ul#contacts");
-//   let htmlForContactInfo = "";
-//   Object.keys(addressBookToDisplay.contacts).forEach(function(key) {
-//     const contact = addressBookToDisplay.findContact(key);
-//     htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
-//   });
-//   contactsList.html(htmlForContactInfo);
-// }
 function generateCards(Cat){
   let output = '';
   for (let i in Cat.movies){
@@ -84,12 +91,6 @@ function generateCards(Cat){
   } 
   return output;
 }
-
-//abandoned
-function tButtons(val) {
-  return "<button value='" + val + "'>test</button>";
-}
-
 
 function timeButtons(movie){
   console.log("movie from timebuttons: "+ movie);
@@ -108,10 +109,11 @@ function timeButtons(movie){
   }
   return output;
 }
-//utility function for each loop to add showtime buttons
+//abandoned
+function tButtons(val) {
+  return "<button value='" + val + "'>test</button>";
+}
 
-//for each showtime in the array, make a button. if 0 text = morning if 1 text = mid day if 2 text = evening
-// return an output string with button elements inside
 
 
 //misc testing stuff to be deleted later
@@ -130,7 +132,3 @@ function setupStuff(){
   return Catalog1;
 }
 
-$(document).ready(function(){
-  let mainCatalog = setupStuff();
-  $(".display-movies").html(generateCards(mainCatalog));
-});

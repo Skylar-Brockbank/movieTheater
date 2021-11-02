@@ -11,9 +11,34 @@
   <title>Movies</title>
 </head>
 <body>
-  <div class="display-movies">
+  <div id="display-movies">
     
   </div>
+
+  <div id="selectionForm">
+    <form>
+      <div class="radio">
+        <label>
+          <input type="radio" name="ageRange" value="0">
+            Child
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="ageRange" value="1" checked>
+            Adult
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="ageRange" value="2">
+            Senior
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
 
   <div id="display-selected-movie">
     //movie name

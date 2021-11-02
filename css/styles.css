@@ -1,3 +1,4 @@
-#display-selected-movie {
+#display-selected-movie, #selectionForm {
   display: none;
 }
+
