@@ -11,40 +11,36 @@
   <title>Movies</title>
 </head>
 <body>
-  <div id="display-movies">
-    
+  <div class="MainCol">
+    <div class="thing">
+      <h1>Movie Theater Name Pending</h1>
+    </div>
+    <div id="display-movies"></div>
+    <div id="selectionForm">
+      <form>
+        <h4>Select an age group for your ticket</h4>
+        <div class="radio">
+          <label>
+            <input type="radio" name="ageRange" value="0">
+              Child (0-16)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="ageRange" value="1" checked>
+              Adult (16-59)
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="ageRange" value="2">
+              Senior (60+)
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="display-selected-movie"> </div>
   </div>
-
-  <div id="selectionForm">
-    <form>
-      <div class="radio">
-        <label>
-          <input type="radio" name="ageRange" value="0">
-            Child
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="ageRange" value="1" checked>
-            Adult
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="ageRange" value="2">
-            Senior
-        </label>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-
-  <div id="display-selected-movie">
-    //movie name
-    //selected price
-  </div>
-
-  
 </body>
 </html>

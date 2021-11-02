@@ -34,7 +34,6 @@ $(document).ready(function(){
 
 });
 
-
 function Ticket(newRelease, showTime, ageRange) {
   this.newRelease = newRelease;
   this.showTime = showTime;
@@ -87,9 +86,9 @@ Catalog.prototype.addMovie = function (movie) {
 function generateCards(Cat){
   let output = '';
   for (let i in Cat.movies){
-  output = output + "<div id=" + i +"><h3>" + Cat.movies[i].name +"</h3>" + timeButtons(Cat.movies[i]) + "</div>"
+  output = output + "<div class='movieCard' id=" + i +"><h3>" + Cat.movies[i].name +"</h3>" + timeButtons(Cat.movies[i]) + "</div>"
   } 
-  return output;
+  return "<div class= 'Box'>" + output + "</div>";
 }
 
 function timeButtons(movie){
@@ -107,14 +106,13 @@ function timeButtons(movie){
     output = output + "<button class='timeButtons' id='button" + m + "' value='" + movie.newRelease + "," + movie.showTimes[m] + "'>" + text + "</button>";
     // output = "<button> this is a test</button>";
   }
-  return output;
+  return "<div class='buttonBox'>" + output + "</div>";
 }
+
 //abandoned
 function tButtons(val) {
   return "<button value='" + val + "'>test</button>";
 }
-
-
 
 //misc testing stuff to be deleted later
 function setupStuff(){
@@ -131,4 +129,3 @@ function setupStuff(){
   console.log(Movie3.showTimes);
   return Catalog1;
 }
-

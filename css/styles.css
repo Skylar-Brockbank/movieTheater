@@ -2,3 +2,79 @@
   display: none;
 }
 
+body {
+  background-color:rgb(75, 75, 75);
+}
+
+.MainCol {
+  width: 80%;
+  height: 100vh;
+  background-color: rgb(161, 0, 35);
+  margin: 0 auto;
+  display: grid;
+}
+
+.Box {
+  padding:1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.movieCard {
+  padding: 1em;
+  background-color: rgba(223, 223, 223, 0.952);
+  border-radius: 1em;
+  display: grid;
+}
+
+form {
+  margin:0 20%;
+  padding: 1em;
+  background-color: rgba(223, 223, 223, 0.952);
+  border-radius: 1em;
+  display: grid;
+}
+.radio {
+  margin: 0 10%;
+  font-weight: bold;
+}
+form > h4 {
+  margin-bottom: 1em;
+}
+  
+.buttonBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+button {
+  width: fit-content;
+  height: fit-content;
+  padding: .5em;
+  border-radius: .5em;
+  margin: .25em;
+  align-self: end;
+  justify-self: center;
+  background-color: rgb(53, 53, 53);
+  color: rgb(255, 251, 238);
+}
+
+button:hover {
+  background-color: rgb(125,55,89);
+  color: rgb(255, 255, 255);
+}
+
+.thing {
+  background-image: url(../img/movieTheater.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 40vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.thing > h1 {
+  color: white;
+}
