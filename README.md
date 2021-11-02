@@ -25,10 +25,31 @@ _Returns a price after giving the user options regarding movie, time and age_
 
 
 ## Tests
-Description:
-Test:
-Code:
-Expected Outcome:
+Description: Ticket()
+Test: It should return an object with properties of newRelease, showTime, and ageRange
+Code: Ticket1 = new Ticket(false, 1, 1);
+      Ticket1.ageRange;
+Expected Outcome: 1
+
+Description: Movie()
+Test: It should return an object with properties of newRelease, and showTimes
+Code: Movie1 = new Movie(true,[]);
+      Movie1.newRelease;
+Expected Outcome: true
+
+Description: Catalog()
+Test: It should return an object containing a list of Movie objects called movies
+Code: Catalog1 = new Catalog();
+      Movie1 = new Movie(true,[]);
+      Catalog1.addMovie(Movie1);
+      Catalog1.movies[0].newRelease;
+Expected Outcome: true
+
+<!-- Describe: Dog()
+Test: It should return an object with properties of name, age and color"
+Code: dog1 = new Dog('spot',3,"brown");
+            dog1.name;
+Expected Output: “spot" -->
 
 ## Known Bugs
 
