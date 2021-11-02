@@ -45,6 +45,18 @@ Code: Catalog1 = new Catalog();
       Catalog1.movies[0].newRelease;
 Expected Outcome: true
 
+Description: Ticket.prototype.getPrice()
+Test: It should return a price given the specifics of the ticket object.
+Code: Ticket1 = new Ticket(true,1,1);
+      Ticket1.getPrice();
+Expected Outcome: 11
+
+Description: Ticket.prototype.getPrice()
+Test: It should return a price given the specifics of the ticket object.
+Code: Ticket1 = new Ticket(true,1,0);
+      Ticket1.getPrice();
+Expected Outcome: 9
+
 <!-- Describe: Dog()
 Test: It should return an object with properties of name, age and color"
 Code: dog1 = new Dog('spot',3,"brown");
